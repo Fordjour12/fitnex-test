@@ -1,0 +1,138 @@
+[
+	{
+		"id": 1,
+		"name": "30-Day Ab Challenge",
+		"description": "Transform your core in just 30 days",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 5,
+		"type": "strength"
+	},
+	{
+		"id": 2,
+		"name": "Couch to 5K",
+		"description": "Start running with this beginner-friendly program",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 3,
+		"type": "cardio"
+	},
+	{
+		"id": 3,
+		"name": "Yoga for Flexibility",
+		"description": "Improve your flexibility with daily yoga sessions",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 4,
+		"type": "flexibility"
+	},
+	{
+		"id": 4,
+		"name": "HIIT Blast",
+		"description": "High-intensity interval training for quick results",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 6,
+		"type": "cardio"
+	},
+	{
+		"id": 5,
+		"name": "Strength Foundations",
+		"description": "Build a strong base with fundamental exercises",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 5,
+		"type": "strength"
+	},
+	{
+		"id": 6,
+		"name": "Mindful Movement",
+		"description": "Combine meditation with gentle exercises",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 3,
+		"type": "flexibility"
+	},
+	{
+		"id": 7,
+		"name": "Pilates Power",
+		"description": "Strengthen your core with Pilates routines",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 4,
+		"type": "strength"
+	},
+	{
+		"id": 8,
+		"name": "Marathon Prep",
+		"description": "Get ready for a marathon with this training plan",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 6,
+		"type": "cardio"
+	},
+	{
+		"id": 9,
+		"name": "Dance Cardio",
+		"description": "Fun dance routines to get your heart pumping",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 5,
+		"type": "cardio"
+	},
+	{
+		"id": 10,
+		"name": "Bodyweight Basics",
+		"description": "No equipment needed for these effective workouts",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 4,
+		"type": "strength"
+	},
+	{
+		"id": 11,
+		"name": "Quick Core",
+		"description": "Short and intense core workouts",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 3,
+		"type": "strength"
+	},
+	{
+		"id": 12,
+		"name": "Morning Yoga",
+		"description": "Start your day with energizing yoga sessions",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 4,
+		"type": "flexibility"
+	},
+	{
+		"id": 13,
+		"name": "Pilates Power",
+		"description": "Strengthen your core with Pilates routines",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 4,
+		"type": "strength"
+	},
+	{
+		"id": 14,
+		"name": "Marathon Prep",
+		"description": "Get ready for a marathon with this training plan",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 6,
+		"type": "cardio"
+	},
+	{
+		"id": 15,
+		"name": "Dance Cardio",
+		"description": "Fun dance routines to get your heart pumping",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 5,
+		"type": "cardio"
+	},
+	{
+		"id": 16,
+		"name": "Bodyweight Basics",
+		"description": "No equipment needed for these effective workouts",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 4,
+		"type": "strength"
+	},
+	{
+		"id": 17,
+		"name": "Quick Core",
+		"description": "Short and intense core workouts",
+		"image": "/placeholder.svg?height=100&width=100",
+		"workouts": 3,
+		"type": "strength"
+	}
+]

@@ -1,0 +1,689 @@
+[
+  {
+    "id": 1,
+    "name": "30-Day Ab Challenge",
+    "description": "Transform your core in just 30 days with this intensive ab workout program. Perfect for beginners and advanced fitness enthusiasts alike.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Crunches",
+        "reps": 20
+      },
+      {
+        "id": 2,
+        "name": "Plank",
+        "duration": "30 seconds"
+      },
+      {
+        "id": 3,
+        "name": "Russian Twists",
+        "reps": 30
+      },
+      {
+        "id": 4,
+        "name": "Leg Raises",
+        "reps": 15
+      },
+      {
+        "id": 5,
+        "name": "Mountain Climbers",
+        "duration": "45 seconds"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Full Body HIIT",
+    "description": "High-intensity interval training to burn fat and build muscle across your entire body.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Burpees",
+        "reps": 15
+      },
+      {
+        "id": 2,
+        "name": "Jump Squats",
+        "reps": 20
+      },
+      {
+        "id": 3,
+        "name": "Push-ups",
+        "reps": 12
+      },
+      {
+        "id": 4,
+        "name": "High Knees",
+        "duration": "30 seconds"
+      },
+      {
+        "id": 5,
+        "name": "Mountain Climbers",
+        "duration": "45 seconds"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Yoga for Beginners",
+    "description": "Start your yoga journey with this gentle introduction to basic poses and breathing techniques.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Mountain Pose",
+        "duration": "1 minute"
+      },
+      {
+        "id": 2,
+        "name": "Downward Dog",
+        "duration": "30 seconds"
+      },
+      {
+        "id": 3,
+        "name": "Warrior I",
+        "duration": "45 seconds per side"
+      },
+      {
+        "id": 4,
+        "name": "Child's Pose",
+        "duration": "1 minute"
+      },
+      {
+        "id": 5,
+        "name": "Corpse Pose",
+        "duration": "5 minutes"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Strength Training Basics",
+    "description": "Build foundational strength with this beginner-friendly weightlifting program.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Squats",
+        "reps": 10,
+        "sets": 3
+      },
+      {
+        "id": 2,
+        "name": "Bench Press",
+        "reps": 8,
+        "sets": 3
+      },
+      {
+        "id": 3,
+        "name": "Deadlifts",
+        "reps": 8,
+        "sets": 3
+      },
+      {
+        "id": 4,
+        "name": "Shoulder Press",
+        "reps": 10,
+        "sets": 3
+      },
+      {
+        "id": 5,
+        "name": "Bent-over Rows",
+        "reps": 10,
+        "sets": 3
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Cardio Blast",
+    "description": "Improve your cardiovascular fitness with this high-energy cardio workout.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Jumping Jacks",
+        "duration": "1 minute"
+      },
+      {
+        "id": 2,
+        "name": "Running in Place",
+        "duration": "2 minutes"
+      },
+      {
+        "id": 3,
+        "name": "Burpees",
+        "reps": 10
+      },
+      {
+        "id": 4,
+        "name": "Jump Rope",
+        "duration": "1 minute"
+      },
+      {
+        "id": 5,
+        "name": "Mountain Climbers",
+        "duration": "1 minute"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Pilates Core Workout",
+    "description": "Strengthen your core and improve flexibility with this Pilates-inspired routine.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "The Hundred",
+        "reps": 100
+      },
+      {
+        "id": 2,
+        "name": "Roll Up",
+        "reps": 10
+      },
+      {
+        "id": 3,
+        "name": "Single Leg Circles",
+        "reps": 10,
+        "per": "leg"
+      },
+      {
+        "id": 4,
+        "name": "Spine Stretch Forward",
+        "reps": 5
+      },
+      {
+        "id": 5,
+        "name": "Saw",
+        "reps": 5,
+        "per": "side"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Bodyweight Workout",
+    "description": "No equipment needed for this effective full-body workout using just your bodyweight.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Push-ups",
+        "reps": 15
+      },
+      {
+        "id": 2,
+        "name": "Squats",
+        "reps": 20
+      },
+      {
+        "id": 3,
+        "name": "Lunges",
+        "reps": 10,
+        "per": "leg"
+      },
+      {
+        "id": 4,
+        "name": "Plank",
+        "duration": "1 minute"
+      },
+      {
+        "id": 5,
+        "name": "Burpees",
+        "reps": 10
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Flexibility and Stretching",
+    "description": "Improve your flexibility and reduce muscle tension with this stretching routine.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Hamstring Stretch",
+        "duration": "30 seconds",
+        "per": "leg"
+      },
+      {
+        "id": 2,
+        "name": "Quad Stretch",
+        "duration": "30 seconds",
+        "per": "leg"
+      },
+      {
+        "id": 3,
+        "name": "Shoulder Stretch",
+        "duration": "30 seconds",
+        "per": "arm"
+      },
+      {
+        "id": 4,
+        "name": "Cat-Cow Stretch",
+        "reps": 10
+      },
+      {
+        "id": 5,
+        "name": "Standing Forward Bend",
+        "duration": "1 minute"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Kettlebell Circuit",
+    "description": "Combine strength and cardio with this kettlebell-based workout circuit.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Kettlebell Swings",
+        "reps": 20
+      },
+      {
+        "id": 2,
+        "name": "Goblet Squats",
+        "reps": 15
+      },
+      {
+        "id": 3,
+        "name": "Single-Arm Rows",
+        "reps": 12,
+        "per": "arm"
+      },
+      {
+        "id": 4,
+        "name": "Turkish Get-ups",
+        "reps": 5,
+        "per": "side"
+      },
+      {
+        "id": 5,
+        "name": "Kettlebell Press",
+        "reps": 10,
+        "per": "arm"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Lower Body Blast",
+    "description": "Focus on your legs and glutes with this lower body workout.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Squats",
+        "reps": 15
+      },
+      {
+        "id": 2,
+        "name": "Lunges",
+        "reps": 12,
+        "per": "leg"
+      },
+      {
+        "id": 3,
+        "name": "Glute Bridges",
+        "reps": 20
+      },
+      {
+        "id": 4,
+        "name": "Calf Raises",
+        "reps": 25
+      },
+      {
+        "id": 5,
+        "name": "Wall Sit",
+        "duration": "1 minute"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Upper Body Strength",
+    "description": "Build strength in your arms, chest, and back with this upper body workout.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Push-ups",
+        "reps": 12
+      },
+      {
+        "id": 2,
+        "name": "Dumbbell Rows",
+        "reps": 10,
+        "per": "arm"
+      },
+      {
+        "id": 3,
+        "name": "Shoulder Press",
+        "reps": 10
+      },
+      {
+        "id": 4,
+        "name": "Tricep Dips",
+        "reps": 15
+      },
+      {
+        "id": 5,
+        "name": "Bicep Curls",
+        "reps": 12
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Tabata Training",
+    "description": "High-intensity interval training using the Tabata protocol for maximum efficiency.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Jump Squats",
+        "duration": "20 seconds on, 10 seconds off"
+      },
+      {
+        "id": 2,
+        "name": "Push-ups",
+        "duration": "20 seconds on, 10 seconds off"
+      },
+      {
+        "id": 3,
+        "name": "Burpees",
+        "duration": "20 seconds on, 10 seconds off"
+      },
+      {
+        "id": 4,
+        "name": "Mountain Climbers",
+        "duration": "20 seconds on, 10 seconds off"
+      },
+      {
+        "id": 5,
+        "name": "High Knees",
+        "duration": "20 seconds on, 10 seconds off"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Resistance Band Workout",
+    "description": "Versatile full-body workout using resistance bands for added challenge.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Resistance Band Squats",
+        "reps": 15
+      },
+      {
+        "id": 2,
+        "name": "Lateral Walks",
+        "reps": 10,
+        "per": "side"
+      },
+      {
+        "id": 3,
+        "name": "Bicep Curls",
+        "reps": 12
+      },
+      {
+        "id": 4,
+        "name": "Tricep Extensions",
+        "reps": 12
+      },
+      {
+        "id": 5,
+        "name": "Resistance Band Rows",
+        "reps": 15
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Plyometric Power",
+    "description": "Explosive movements to improve power, speed, and agility.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Box Jumps",
+        "reps": 10
+      },
+      {
+        "id": 2,
+        "name": "Plyo Push-ups",
+        "reps": 8
+      },
+      {
+        "id": 3,
+        "name": "Jump Lunges",
+        "reps": 12
+      },
+      {
+        "id": 4,
+        "name": "Tuck Jumps",
+        "reps": 15
+      },
+      {
+        "id": 5,
+        "name": "Depth Jumps",
+        "reps": 8
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Foam Rolling Recovery",
+    "description": "Self-myofascial release techniques to aid in muscle recovery and flexibility.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "IT Band Roll",
+        "duration": "1 minute",
+        "per": "leg"
+      },
+      {
+        "id": 2,
+        "name": "Quad Roll",
+        "duration": "1 minute",
+        "per": "leg"
+      },
+      {
+        "id": 3,
+        "name": "Calf Roll",
+        "duration": "1 minute",
+        "per": "leg"
+      },
+      {
+        "id": 4,
+        "name": "Upper Back Roll",
+        "duration": "2 minutes"
+      },
+      {
+        "id": 5,
+        "name": "Glute Roll",
+        "duration": "1 minute",
+        "per": "side"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Balance and Stability",
+    "description": "Improve your balance, coordination, and core stability with these exercises.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Single Leg Stand",
+        "duration": "30 seconds",
+        "per": "leg"
+      },
+      {
+        "id": 2,
+        "name": "Bosu Ball Squats",
+        "reps": 12
+      },
+      {
+        "id": 3,
+        "name": "Stability Ball Plank",
+        "duration": "45 seconds"
+      },
+      {
+        "id": 4,
+        "name": "Single Leg Deadlift",
+        "reps": 10,
+        "per": "leg"
+      },
+      {
+        "id": 5,
+        "name": "Bird Dog",
+        "reps": 8,
+        "per": "side"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Dumbbell Full Body",
+    "description": "Comprehensive full-body workout using dumbbells for resistance.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Dumbbell Squats",
+        "reps": 12
+      },
+      {
+        "id": 2,
+        "name": "Dumbbell Bench Press",
+        "reps": 10
+      },
+      {
+        "id": 3,
+        "name": "Dumbbell Rows",
+        "reps": 12,
+        "per": "arm"
+      },
+      {
+        "id": 4,
+        "name": "Dumbbell Lunges",
+        "reps": 10,
+        "per": "leg"
+      },
+      {
+        "id": 5,
+        "name": "Dumbbell Shoulder Press",
+        "reps": 10
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Core Crusher",
+    "description": "Intense core workout to strengthen your abs, obliques, and lower back.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Plank",
+        "duration": "1 minute"
+      },
+      {
+        "id": 2,
+        "name": "Russian Twists",
+        "reps": 30
+      },
+      {
+        "id": 3,
+        "name": "Bicycle Crunches",
+        "reps": 20
+      },
+      {
+        "id": 4,
+        "name": "Leg Raises",
+        "reps": 15
+      },
+      {
+        "id": 5,
+        "name": "Superman Hold",
+        "duration": "30 seconds"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Functional Fitness",
+    "description": "Improve everyday movement patterns with these functional exercises.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Farmer's Walk",
+        "duration": "30 seconds"
+      },
+      {
+        "id": 2,
+        "name": "Suitcase Carry",
+        "duration": "30 seconds",
+        "per": "side"
+      },
+      {
+        "id": 3,
+        "name": "Tire Flips",
+        "reps": 10
+      },
+      {
+        "id": 4,
+        "name": "Medicine Ball Slams",
+        "reps": 15
+      },
+      {
+        "id": 5,
+        "name": "Battle Ropes",
+        "duration": "30 seconds"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Bodyweight EMOM",
+    "description": "Every Minute On the Minute workout to challenge your endurance and strength.",
+    "image": "/placeholder.svg?height=200&width=200",
+    "workouts": [
+      {
+        "id": 1,
+        "name": "Push-ups",
+        "reps": 10
+      },
+      {
+        "id": 2,
+        "name": "Squats",
+        "reps": 15
+      },
+      {
+        "id": 3,
+        "name": "Mountain Climbers",
+        "reps": 20
+      },
+      {
+        "id": 4,
+        "name": "Plank Jacks",
+        "reps": 15
+      },
+      {
+        "id": 5,
+        "name": "Burpees",
+        "reps": 8
+      }
+    ]
+  }
+]

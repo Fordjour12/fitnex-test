@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "Bicep Curls",
+    "description": "A classic exercise to build bicep strength.",
+    "video_url": "https://example.com/bicep_curl.mp4",
+    "image_url": "https://example.com/bicep_curl.jpg",
+    "created_at": "2024-03-08T10:00:00Z",
+    "updated_at": "2024-03-08T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Push-ups",
+    "description": "A full-body exercise targeting chest, shoulders, and triceps.",
+    "video_url": "https://example.com/push_up.mp4",
+    "image_url": "https://example.com/push_up.jpg",
+    "created_at": "2024-03-08T10:01:00Z",
+    "updated_at": "2024-03-08T10:01:00Z"
+  },
+  {
+    "id": 3,
+    "name": "Squats",
+    "description": "Works legs and glutes.",
+    "video_url": "https://example.com/squat.mp4",
+    "image_url": "https://example.com/squat.jpg",
+    "created_at": "2024-03-08T10:02:00Z",
+    "updated_at": "2024-03-08T10:02:00Z"
+  },
+  {
+    "id": 4,
+    "name": "Lunges",
+    "description": "Improves leg strength and balance.",
+    "video_url": "https://example.com/lunge.mp4",
+    "image_url": "https://example.com/lunge.jpg",
+    "created_at": "2024-03-08T10:03:00Z",
+    "updated_at": "2024-03-08T10:03:00Z"
+  },
+  {
+    "id": 5,
+    "name": "Plank",
+    "description": "Core strengthening exercise.",
+    "video_url": "https://example.com/plank.mp4",
+    "image_url": "https://example.com/plank.jpg",
+    "created_at": "2024-03-08T10:04:00Z",
+    "updated_at": "2024-03-08T10:04:00Z"
+  },
+  {
+    "id": 6,
+    "name": "Crunches",
+    "description": "Works abdominal muscles.",
+    "video_url": "https://example.com/crunch.mp4",
+    "image_url": "https://example.com/crunch.jpg",
+    "created_at": "2024-03-08T10:05:00Z",
+    "updated_at": "2024-03-08T10:05:00Z"
+  },
+  {
+    "id": 7,
+    "name": "Deadlifts",
+    "description": "Full body exercise, great for strength.",
+    "video_url": "https://example.com/deadlift.mp4",
+    "image_url": "https://example.com/deadlift.jpg",
+    "created_at": "2024-03-08T10:06:00Z",
+    "updated_at": "2024-03-08T10:06:00Z"
+  },
+  {
+    "id": 8,
+    "name": "Overhead Press",
+    "description": "Shoulder and upper body strength.",
+    "video_url": "https://example.com/overhead_press.mp4",
+    "image_url": "https://example.com/overhead_press.jpg",
+    "created_at": "2024-03-08T10:07:00Z",
+    "updated_at": "2024-03-08T10:07:00Z"
+  },
+  {
+    "id": 9,
+    "name": "Bench Press",
+    "description": "Chest and triceps exercise.",
+    "video_url": "https://example.com/bench_press.mp4",
+    "image_url": "https://example.com/bench_press.jpg",
+    "created_at": "2024-03-08T10:08:00Z",
+    "updated_at": "2024-03-08T10:08:00Z"
+  },
+  {
+    "id": 10,
+    "name": "Pull-ups",
+    "description": "Back and biceps exercise.",
+    "video_url": "https://example.com/pull_up.mp4",
+    "image_url": "https://example.com/pull_up.jpg",
+    "created_at": "2024-03-08T10:09:00Z",
+    "updated_at": "2024-03-08T10:09:00Z"
+  },
+  {
+    "id": 11,
+    "name": "Rows",
+    "description": "Back and shoulder exercise.",
+    "video_url": "https://example.com/row.mp4",
+    "image_url": "https://example.com/row.jpg",
+    "created_at": "2024-03-08T10:10:00Z",
+    "updated_at": "2024-03-08T10:10:00Z"
+  },
+  {
+    "id": 12,
+    "name": "Walking Lunges",
+    "description": "Improved balance and leg strength.",
+    "video_url": "https://example.com/walking_lunge.mp4",
+    "image_url": "https://example.com/walking_lunge.jpg",
+    "created_at": "2024-03-08T10:11:00Z",
+    "updated_at": "2024-03-08T10:11:00Z"
+  },
+  {
+    "id": 13,
+    "name": "Jumping Jacks",
+    "description": "Cardiovascular exercise.",
+    "video_url": "https://example.com/jumping_jacks.mp4",
+    "image_url": "https://example.com/jumping_jacks.jpg",
+    "created_at": "2024-03-08T10:12:00Z",
+    "updated_at": "2024-03-08T10:12:00Z"
+  },
+  {
+    "id": 14,
+    "name": "Burpees",
+    "description": "Full body, high intensity exercise.",
+    "video_url": "https://example.com/burpee.mp4",
+    "image_url": "https://example.com/burpee.jpg",
+    "created_at": "2024-03-08T10:13:00Z",
+    "updated_at": "2024-03-08T10:13:00Z"
+  },
+  {
+    "id": 15,
+    "name": "Mountain Climbers",
+    "description": "Cardio and core exercise.",
+    "video_url": "https://example.com/mountain_climber.mp4",
+    "image_url": "https://example.com/mountain_climber.jpg",
+    "created_at": "2024-03-08T10:14:00Z",
+    "updated_at": "2024-03-08T10:14:00Z"
+  },
+  {
+    "id": 16,
+    "name": "Russian Twists",
+    "description": "Obliques and core exercise.",
+    "video_url": "https://example.com/russian_twist.mp4",
+    "image_url": "https://example.com/russian_twist.jpg",
+    "created_at": "2024-03-08T10:15:00Z",
+    "updated_at": "2024-03-08T10:15:00Z"
+  },
+  {
+    "id": 17,
+    "name": "Tricep Dips",
+    "description": "Tricep focused exercise.",
+    "video_url": "https://example.com/tricep_dip.mp4",
+    "image_url": "https://example.com/tricep_dip.jpg",
+    "created_at": "2024-03-08T10:16:00Z",
+    "updated_at": "2024-03-08T10:16:00Z"
+  },
+  {
+    "id": 18,
+    "name": "Calf Raises",
+    "description": "Calf muscle exercise.",
+    "video_url": "https://example.com/calf_raise.mp4",
+    "image_url": "https://example.com/calf_raise.jpg",
+    "created_at": "2024-03-08T10:17:00Z",
+    "updated_at": "2024-03-08T10:17:00Z"
+  },
+  {
+    "id": 19,
+    "name": "Yoga Sun Salutations",
+    "description": "Full body stretch and warm-up.",
+    "video_url": "https://example.com/sun_salutation.mp4",
+    "image_url": "https://example.com/sun_salutation.jpg",
+    "created_at": "2024-03-08T10:18:00Z",
+    "updated_at": "2024-03-08T10:18:00Z"
+  },
+  {
+    "id": 20,
+    "name": "High Knees",
+    "description": "Cardiovascular warm-up or exercise.",
+    "video_url": "https://example.com/high_knees.mp4",
+    "image_url": "https://example.com/high_knees.jpg",
+    "created_at": "2024-03-08T10:19:00Z",
+    "updated_at": "2024-03-08T10:19:00Z"
+  }
+]

@@ -15,8 +15,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Dumbbell, Search } from "lucide-react";
 import Link from "next/link";*/
+import { Button } from "@/components/ui/button";
+import { Dumbbell } from "lucide-react";
 import { env } from "@/env/client";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
@@ -63,14 +64,14 @@ export function ExerciseListComponent() {
   return (
     <div className="container mx-auto px-4 py-8">
       <header className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2">My Workouts</h1>
+        <h1 className="text-3xl font-bold mb-2">My Exercises</h1>
         <p className="text-muted-foreground">
-          Every quest completed is a step towards a stronger, healthier you.
+          Every exercise completed is a step towards a stronger, healthier you.
         </p>
       </header>
 
-      {/*<div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
-        <div className="flex-1 w-full sm:w-auto">
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
+        {/*<div className="flex-1 w-full sm:w-auto">
           <
             <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
             <Input
@@ -92,13 +93,13 @@ export function ExerciseListComponent() {
             <SelectItem value="cardio">Cardio</SelectItem>
             <SelectItem value="flexibility">Flexibility</SelectItem>
           </SelectContent>
-        </Select>
-        <Link href="/sidequest/create-side-quest">
+        </Select>*/}
+        <Link href="/exercise/create-workout">
           <Button>
-            <Dumbbell className="mr-2 h-4 w-4" /> Create New Workout
+            <Dumbbell className="mr-2 h-4 w-4" /> Create New Exercise
           </Button>
         </Link>
-      </div>*/}
+      </div>
 
       <div>
         {isError && <p>Error: error something happened</p>}

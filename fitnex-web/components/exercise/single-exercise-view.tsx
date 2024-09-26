@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle,CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { ArrowLeftIcon } from "lucide-react";
 
@@ -33,11 +33,11 @@ export function SingleExerciseViewComponent({
   return (
     <div className="container mx-auto px-4 py-8">
       <Link
-        href="/sidequest"
+        href="/exercise"
         className="inline-flex items-center text-primary hover:underline mb-6"
       >
         <ArrowLeftIcon className="mr-2 h-4 w-4" />
-        Back to Side Quests
+        Back to All Exercises
       </Link>
 
       <div className="flex flex-col lg:flex-row gap-8">
@@ -84,7 +84,7 @@ export function SingleExerciseViewComponent({
               <p className="text-muted-foreground mb-4">
                 {exercise?.description}
               </p>
-              <div className="space-y-2 text-sm">
+              <div>
                 <p>
                   <span className="font-medium">Added on:</span>{" "}
                   {new Date(exercise?.created_at).toLocaleDateString()}
@@ -97,42 +97,11 @@ export function SingleExerciseViewComponent({
             </CardContent>
           </Card>
         </div>
-        <div>
-          <h3>See Also</h3>
+      </div>
 
-            {/*<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {exercise?.workouts?.map((workout) => (
-              <Link href={`/workout/${workout.id}`} key={workout.id}>
-                <Card className="h-full hover:shadow-lg transition-shadow duration-200">
-                  <CardHeader>
-                    <div className="w-16 h-16 mx-auto mb-2">
-                      <img
-                        src={workout.image}
-                        alt={workout.name}
-                        className="w-full h-full object-cover rounded-full"
-                      />
-                    </div>
-                    <CardTitle className="text-center">{workout.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-center text-muted-foreground">
-                      {workout.description}
-                    </p>
-                  </CardContent>
-                  <CardFooter className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">
-                      {workout.workouts} workouts
-                    </span>
-                    <span className="text-sm font-medium capitalize">
-                      {workout.type}
-                    </span>
-                  </CardFooter>
-                </Card>
-              </Link>
-              ))}*/}
-          </div
-        </div>
-
+      {/* See similar exercises */}
+      <div className="mt-8">
+        <h3>See similar exercises</h3>
       </div>
     </div>
   );

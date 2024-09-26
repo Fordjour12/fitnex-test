@@ -94,6 +94,17 @@ export function SingleExerciseViewComponent({
                   {new Date(exercise?.updated_at).toLocaleDateString()}
                 </p>
               </div>
+              <div className="flex gap-4 mt-4">
+                <Button>
+                  <Link
+                    href="/exercise/update/[id]"
+                    as={`/exercise/update/${exercise?.id}`}
+                  >
+                    Edit Exercise
+                  </Link>
+                </Button>
+                <Button variant={"destructive"}>Delete Exercise</Button>
+              </div>
             </CardContent>
           </Card>
         </div>

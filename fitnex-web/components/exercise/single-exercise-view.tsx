@@ -16,7 +16,7 @@ export interface SingleExerciseType {
   updated_at: string;
 }
 
-interface SingleExerciseViewProps {
+export interface SingleExerciseViewProps {
   exercise: SingleExerciseType;
 }
 

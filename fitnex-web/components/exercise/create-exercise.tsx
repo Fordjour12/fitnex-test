@@ -39,7 +39,16 @@ export function CreateExerciseComponent() {
       </Link>
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Left Section - Form */}
+
+
         <div className="w-full lg:w-1/2">
+
+
+
+
+
+
+
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="quest-name">Exercise Name</Label>

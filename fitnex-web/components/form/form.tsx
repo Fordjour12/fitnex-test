@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
 import {
 	Form,
@@ -9,11 +10,11 @@ import {
 	FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Textarea } from "../ui/textarea";
 
 const isClient = typeof window !== "undefined";
 
@@ -76,7 +77,7 @@ export default function CreateExerciseForm() {
 				"http://localhost:8085/api/v1/create-exercise",
 				{
 					method: "POST",
-					body: formData, // Send FormData as the request body
+					body: formData,
 				},
 			);
 
@@ -88,6 +89,7 @@ export default function CreateExerciseForm() {
 		},
 		onSuccess: (data) => {
 			console.log("Exercise created successfully", data);
+			form.reset();
 		},
 		onError: (error) => {
 			console.error("Error creating exercise", error);
@@ -101,75 +103,57 @@ export default function CreateExerciseForm() {
 					<FormField
 						control={form.control}
 						name="name"
-						render={({ field }) => {
-							return (
-								<FormItem>
-									<FormLabel>Exercise Name</FormLabel>
-									<FormControl>
-										<Input placeholder="Sit-ups" {...field} />
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							);
-						}}
+						render={({ field }) => (
+							<FormItem>
+								<FormLabel>Exercise Name</FormLabel>
+								<FormControl>
+									<Input placeholder="Sit-ups" {...field} />
+								</FormControl>
+								<FormMessage />
+							</FormItem>
+						)}
 					/>
 					<FormField
 						control={form.control}
 						name="description"
-						render={({ field }) => {
-							return (
-								<FormItem>
-									<FormLabel htmlFor="quest-description">
-										Exercise Description
-									</FormLabel>
-									<FormControl>
-										<Textarea id="exercise-description" required {...field} />
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							);
-						}}
+						render={({ field }) => (
+							<FormItem>
+								<FormLabel htmlFor="quest-description">
+									Exercise Description
+								</FormLabel>
+								<FormControl>
+									<Textarea id="exercise-description" required {...field} />
+								</FormControl>
+								<FormMessage />
+							</FormItem>
+						)}
 					/>
 					<FormField
 						control={form.control}
 						name="videoUrl"
-						render={({ field }) => {
-							return (
-								<FormItem>
-									<FormLabel>Exercise Video</FormLabel>
-									<FormControl>
-										<Input
-											type="file"
-											accept="video/*"
-											placeholder="shadcn"
-											{...fileRef2}
-										/>
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							);
-						}}
+						render={() => (
+							<FormItem>
+								<FormLabel>Exercise Video</FormLabel>
+								<FormControl>
+									<Input type="file" accept="video/*" {...fileRef2} />
+								</FormControl>
+								<FormMessage />
+							</FormItem>
+						)}
 					/>
 
 					<FormField
 						control={form.control}
 						name="imageUrl"
-						render={({ field }) => {
-							return (
-								<FormItem>
-									<FormLabel>Image URL</FormLabel>
-									<FormControl>
-										<Input
-											type="file"
-											accept="image/*"
-											placeholder="shadcn"
-											{...fileRef}
-										/>
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							);
-						}}
+						render={() => (
+							<FormItem>
+								<FormLabel>Image URL</FormLabel>
+								<FormControl>
+									<Input type="file" accept="image/*" {...fileRef} />
+								</FormControl>
+								<FormMessage />
+							</FormItem>
+						)}
 					/>
 					<Button type="submit" className="my-4">
 						Submit

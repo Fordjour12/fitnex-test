@@ -1,14 +1,13 @@
 "use client";
 
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { DeleteModalComponent } from "@/components/delete-modal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { ArrowLeftIcon, Terminal } from "lucide-react";
+import { ArrowLeftIcon } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { DeleteModalComponent } from "../delete-modal";
+import { useRef, useState } from "react";
 
 export interface SingleExerciseType {
 	id: number;
@@ -24,53 +23,49 @@ export function SingleExerciseViewComponent({
 	...exercise
 }: SingleExerciseType) {
 	const [isPlaying, setIsPlaying] = useState(false);
+	const videoRef = useRef<HTMLVideoElement>(null); // Reference to the video player
 
 	const togglePlay = () => {
-		setIsPlaying(!isPlaying);
-		// Here you would typically control the video playback
+		if (videoRef.current) {
+			if (isPlaying) {
+				videoRef.current.pause();
+			} else {
+				videoRef.current.play();
+			}
+			setIsPlaying(!isPlaying);
+		}
 	};
 
 	const router = useRouter();
+	const queryClient = useQueryClient();
 
-	const deleteExercise = async (exerciseId: string) => {
-		return await fetch(
-			`http://localhost:8085/api/v1/delete-exercise/${exerciseId}`,
-			{
-				method: "DELETE",
-				headers: {
-					"Content-Type": "application/json",
+	// useMutation for deleting exercise
+	const deleteMutation = useMutation({
+		mutationFn: async (exerciseId: string) => {
+			return await fetch(
+				`http://localhost:8085/api/v1/delete-exercise/${exerciseId}`,
+				{
+					method: "DELETE",
+					headers: {
+						"Content-Type": "application/json",
+					},
 				},
-			},
-		);
-	};
+			);
+		},
+		onSuccess: () => {
+			queryClient.invalidateQueries({
+				queryKey: ["exercises"],
+				exact: true,
+			});
+			router.push("/exercise");
+		},
+		onError: (error) => {
+			console.error("Error deleting exercise", error);
+		},
+	});
 
-	const deleteExerciseHandler = () => {
-		const queryClient = useQueryClient();
-
-		return useMutation({
-			mutationFn: async (exerciseId: string) => deleteExercise(exerciseId),
-			onSuccess: () => {
-				queryClient.invalidateQueries({
-					queryKey: ["exercises"],
-					exact: true,
-				});
-				router.push("/exercise");
-			},
-			onError: (error) => {
-				console.log("Error deleting exercise");
-				return (
-					<Alert>
-						<Terminal className="h-4 w-4" />
-						<AlertTitle>Heads up!</AlertTitle>
-						<AlertDescription>{error.message}</AlertDescription>
-					</Alert>
-				);
-			},
-		});
-	};
-
-	const deleteExerciserFn = async (exerciseId: string) => {
-		deleteExerciseHandler().mutate(exerciseId);
+	const deleteExerciserFn = (exerciseId: string) => {
+		deleteMutation.mutate(exerciseId);
 	};
 
 	return (
@@ -88,6 +83,7 @@ export function SingleExerciseViewComponent({
 				<div className="lg:w-2/3">
 					<Card className="w-full aspect-video bg-emerald-800 relative overflow-hidden">
 						<video
+							ref={videoRef} // Attach the ref to control playback
 							className="w-full h-full object-cover"
 							poster={exercise.image_url}
 						>
@@ -95,6 +91,7 @@ export function SingleExerciseViewComponent({
 							<track kind="captions" />
 						</video>
 
+						{/* Play/Pause button overlay */}
 						<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
 							<Button
 								onClick={togglePlay}

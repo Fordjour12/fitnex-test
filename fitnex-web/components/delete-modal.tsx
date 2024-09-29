@@ -163,8 +163,8 @@ export function DeleteModalComponent({
 				</DialogHeader>
 				<div className="py-4 space-y-4">
 					<p className="text-sm text-muted-foreground">
-						This action will permanently delete this{" "}
-						{String(itemName).toLowerCase()}. This action cannot be undone.
+						This action will permanently delete this {itemName.toLowerCase()}.
+						This action cannot be undone.
 					</p>
 					<div className="space-y-2">
 						<p className="text-sm font-medium">

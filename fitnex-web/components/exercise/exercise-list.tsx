@@ -28,17 +28,6 @@ export type ExerciseType = {
 	id: number;
 	name: string;
 	description: string;
-	image: string;
-	video_url: string;
-	type: string;
-	created_at: string;
-	updated_at: string;
-};
-
-export type ExerciseType2 = {
-	id: number;
-	name: string;
-	description: string;
 	image_url: string;
 	video_url: string;
 	created_at: string;
@@ -49,7 +38,6 @@ export function ExerciseListComponent() {
 	// const [searchTerm, setSearchTerm] = useState("");
 	// const [filterType, setFilterType] = useState("");
 	const [exercises, setExercises] = useState<ExerciseType[]>();
-	const [exercise2, setExercise2] = useState<ExerciseType2[]>();
 
 	const base = env.NEXT_PUBLIC_BASE_URL;
 
@@ -67,21 +55,8 @@ export function ExerciseListComponent() {
 	} = useQuery({
 		queryKey: ["exercises", { exercises }],
 		queryFn: async () => {
-			const response = await fetch(`${base}/exercise`);
-			return (await response.json()) as ExerciseType[];
-		},
-	});
-
-	const {
-		data: exercisesData2,
-		isError: isError2,
-		isPending: isPending2,
-		isLoading: isLoading2,
-	} = useQuery({
-		queryKey: ["exercises2", { exercise2 }],
-		queryFn: async () => {
 			const response = await fetch("http://localhost:8085/api/v1/exercise");
-			return (await response.json()) as ExerciseType2[];
+			return (await response.json()) as ExerciseType[];
 		},
 	});
 
@@ -124,7 +99,7 @@ export function ExerciseListComponent() {
 					</Button>
 				</Link>
 			</div>
-
+			{/* 
 			<div>
 				{isError && <p>Error: error something happened</p>}
 				{isLoading && isPending}
@@ -162,15 +137,14 @@ export function ExerciseListComponent() {
 						))}
 					</div>
 				)}
-			</div>
+			</div> */}
 
 			<div>
-				<h1 className="text-6xl font-extrabold my-4 p-4">Exercise 2</h1>
-				{isError2 && <p>Error: error something happened</p>}
-				{isLoading2 && isPending2}
-				{!isLoading2 && !isPending2 && (
+				{isError && <p>Error: error something happened</p>}
+				{isLoading && isPending}
+				{!isLoading && !isPending && (
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-						{exercisesData2?.map((exercise) => (
+						{exercisesData?.map((exercise) => (
 							<Link href={`/exercise/${exercise.id}`} key={exercise.id}>
 								<Card className="h-full hover:shadow-lg transition-shadow duration-200">
 									<CardHeader>

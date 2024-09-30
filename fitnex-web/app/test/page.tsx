@@ -1,5 +1,5 @@
-import CreateExerciseForm from "@/components/form/form";
+import CreateWorkoutForm from "@/components/form/form";
 
 export default function page() {
-    return <CreateExerciseForm/>
+	return <CreateWorkoutForm />;
 }

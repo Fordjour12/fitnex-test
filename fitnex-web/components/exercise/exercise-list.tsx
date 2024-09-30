@@ -147,22 +147,22 @@ export function ExerciseListComponent() {
 						{exercisesData?.map((exercise) => (
 							<Link href={`/exercise/${exercise.id}`} key={exercise.id}>
 								<Card className="h-full hover:shadow-lg transition-shadow duration-200">
+									<div className="aspect-auto w-full object-cover">
+										<Image
+											width={350}
+											height={200}
+											src={exercise.image_url}
+											alt={exercise.name}
+											className=" aspect-auto w-full h-full object-cover "
+										/>
+									</div>
 									<CardHeader>
-										<div className="w-16 h-16 mx-auto mb-2">
-											<Image
-												width={200}
-												height={100}
-												src={exercise.image_url}
-												alt={exercise.name}
-												className="w-full h-full object-cover rounded-full"
-											/>
-										</div>
-										<CardTitle className="text-center">
+										<CardTitle className="line-clamp-1 capitalize">
 											{exercise.name}
 										</CardTitle>
 									</CardHeader>
 									<CardContent>
-										<p className="text-center text-muted-foreground">
+										<p className="text-center text-muted-foreground truncate line-clamp-2">
 											{exercise.description}
 										</p>
 									</CardContent>

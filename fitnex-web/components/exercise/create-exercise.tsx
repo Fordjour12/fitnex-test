@@ -1,3 +1,6 @@
+// TODO: add a loading state for the form or a spinner while the form is submitting
+// TODO: add a success message after the form is submitted
+
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -118,7 +121,7 @@ export function CreateExerciseComponent() {
 
 	return (
 		<div className="container mx-auto px-4 py-8">
-			<h1 className="text-3xl font-bold mb-8 text-center">Create Exercise</h1>
+			<h1 className="text-5xl font-bold mb-8 ">Create Exercise</h1>
 			<Link
 				href="/exercise"
 				className="inline-flex items-center text-primary hover:underline mb-6"
@@ -257,7 +260,7 @@ export function CreateExerciseComponent() {
 									<img
 										src={URL.createObjectURL(watchedValues.imageUrl[0])}
 										alt="Exercise  Preview"
-										className="my-4 max-h-40"
+										className="my-4 max-h-40 w-full object-contain aspect-video"
 									/>
 								</div>
 							) : (
@@ -267,7 +270,7 @@ export function CreateExerciseComponent() {
 							)}
 							{watchedValues.videoUrl?.length ? (
 								<div className="w-full h-48 rounded-lg overflow-hidden">
-									<video controls className="my-4 max-h-40">
+									<video controls className="my-4 max-h-40 w-full aspect-video">
 										<source
 											src={URL.createObjectURL(watchedValues.videoUrl[0])}
 										/>

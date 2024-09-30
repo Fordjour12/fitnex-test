@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
 	Card,
 	CardContent,
@@ -8,79 +8,104 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from "@/components/ui/select";
-import { Dumbbell, Search } from "lucide-react";
+
 import Link from "next/link";
-import { useState } from "react";
+
+export type WorkoutType = {
+	id: number;
+	name: string;
+	category: string;
+	description: string;
+	estimated_time: number;
+	cover_image: string;
+	difficulty_level: string;
+	workout_exercises: {
+		order_index: number;
+		type: string;
+		exercise_id?: number;
+		execise_id?: number;
+		reps?: number;
+		duration?: number;
+		set?: number;
+	}[];
+};
 
 // Mock data for workouts
-const workoutList = [
+const workoutdata = [
 	{
 		id: 1,
-		name: "30-Day Ab Challenge",
-		description: "Transform your core in just 30 days",
-		image: "/placeholder.svg?height=100&width=100",
-		workouts: 5,
-		type: "strength",
-	},
-	{
-		id: 2,
-		name: "Couch to 5K",
-		description: "Start running with this beginner-friendly program",
-		image: "/placeholder.svg?height=100&width=100",
-		workouts: 3,
-		type: "cardio",
-	},
-	{
-		id: 3,
-		name: "Yoga for Flexibility",
-		description: "Improve your flexibility with daily yoga sessions",
-		image: "/placeholder.svg?height=100&width=100",
-		workouts: 4,
-		type: "flexibility",
-	},
-	{
-		id: 4,
-		name: "HIIT Blast",
-		description: "High-intensity interval training for quick results",
-		image: "/placeholder.svg?height=100&width=100",
-		workouts: 6,
-		type: "cardio",
-	},
-	{
-		id: 5,
-		name: "Strength Foundations",
-		description: "Build a strong base with fundamental exercises",
-		image: "/placeholder.svg?height=100&width=100",
-		workouts: 5,
-		type: "strength",
-	},
-	{
-		id: 6,
-		name: "Mindful Movement",
-		description: "Combine meditation with gentle exercises",
-		image: "/placeholder.svg?height=100&width=100",
-		workouts: 3,
-		type: "flexibility",
+		name: "Full Body Circuit",
+		category: "Strength",
+		description:
+			"A workout with a mix of strength exercises and timed rest periods.",
+		estimated_time: 45,
+		cover_image: "circuit.png",
+		difficulty_level: "Intermediate",
+		workout_exercises: [
+			{
+				order_index: 1,
+				type: "exercise",
+				execise_id: 101,
+				reps: 15,
+				set: 2,
+			},
+			{
+				order_index: 2,
+				type: "exercise",
+				exercise_id: 102,
+				reps: 20,
+				set: 2,
+			},
+			{
+				order_index: 3,
+				type: "exercise",
+				exercise_id: 103,
+				duration: 30,
+				set: 2,
+			},
+			{ order_index: 4, type: "rest", duration: 60 },
+			{
+				order_index: 5,
+				type: "exercise",
+				exercise_id: 104,
+				reps: 15,
+				set: 2,
+			},
+			{
+				order_index: 6,
+				type: "exercise",
+				exercise_id: 105,
+				reps: 10,
+				set: 2,
+			},
+			{ order_index: 7, type: "rest", duration: 60, set: 2 },
+		],
 	},
 ];
 
-export function WorkoutListComponent() {
-	const [searchTerm, setSearchTerm] = useState("");
-	const [filterType, setFilterType] = useState("");
+/*
+const [workouts, setWorkouts] = useState<WorkoutType[]>();
 
-	const filteredQuests = workoutList.filter(
-		(quest) =>
-			quest.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-			(filterType === "" || quest.type === filterType),
-	);
+const base = env.NEXT_PUBLIC_BASE_URL;
+
+const { data } = useQuery({
+	queryKey: ["workouts", { workouts }],
+	queryFn: async () => {
+		const response = await fetch(`${base}/workout`);
+		return (await response.json()) as WorkoutType[];
+	},
+});
+*/
+
+export function WorkoutListComponent() {
+	// const [searchTerm, setSearchTerm] = useState("");
+	// const [filterType, setFilterType] = useState("");
+
+	// const filteredQuests = workoutList.filter(
+	// 	(quest) =>
+	// 		quest.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+	// 		(filterType === "" || quest.type === filterType),
+	// );
 
 	return (
 		<div className="container mx-auto px-4 py-8">
@@ -91,7 +116,7 @@ export function WorkoutListComponent() {
 				</p>
 			</header>
 
-			<div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
+			{/* <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
 				<div className="flex-1 w-full sm:w-auto">
 					<div className="relative">
 						<Search className="absolute left-2 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
@@ -120,11 +145,41 @@ export function WorkoutListComponent() {
 						<Dumbbell className="mr-2 h-4 w-4" /> Create New Workout
 					</Button>
 				</Link>
-			</div>
+			</div> */}
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+				{workoutdata.map((workout) => (
+					<Link href={`/workout/${workout.id}`} key={workout.id}>
+						<Card className="h-full hover:shadow-lg transition-shadow duration-200">
+							<CardHeader>
+								<div className="w-16 h-16 mx-auto mb-2">
+									<img
+										src={workout.cover_image}
+										alt={workout.name}
+										className="w-full h-full object-cover rounded-full"
+									/>
+								</div>
+								<CardTitle className="text-center">{workout.name}</CardTitle>
+							</CardHeader>
+							<CardContent>
+								<p className="text-center text-muted-foreground">
+									{workout.description}
+								</p>
+							</CardContent>
+							<CardFooter className="flex justify-between">
+								<Badge>
+									<span className="text-sm font-medium capitalize">
+										{workout.category}
+									</span>
+								</Badge>
+							</CardFooter>
+						</Card>
+					</Link>
+				))}
+			</div>
+			{/*
 				{filteredQuests.map((quest) => (
-					<Link href={`/sidequest/${quest.id}`} key={quest.id}>
+					<Link href={`/workout/${quest.id}`} key={quest.id}>
 						<Card className="h-full hover:shadow-lg transition-shadow duration-200">
 							<CardHeader>
 								<div className="w-16 h-16 mx-auto mb-2">
@@ -160,7 +215,7 @@ export function WorkoutListComponent() {
 						No side quests found. Try adjusting your search or filter.
 					</p>
 				</div>
-			)}
+			)}*/}
 		</div>
 	);
 }

@@ -34,6 +34,7 @@ import {
 	TableRow,
 } from "@/components/ui/table";
 import { Textarea } from "@/components/ui/textarea";
+import { useMutation } from "@tanstack/react-query";
 
 const isClient = typeof window !== "undefined";
 
@@ -112,19 +113,31 @@ export default function WorkoutForm() {
 				formData.append(`workout_exercises.${i}.set`, String(exercise.set));
 			}
 		}
-
-		const response = await fetch(
-			"http://localhost:8085/api/v1/create-workout",
-			{
-				method: "POST",
-				body: formData,
-			},
-		);
-		if (!response.ok) {
-			throw new Error("Failed to submit workout");
-		}
-		return response.json();
+		mutation.mutate(formData);
 	};
+
+	const mutation = useMutation({
+		mutationFn: async (formData: FormData) => {
+			const response = await fetch(
+				"http://localhost:8085/api/v1/create-workout",
+				{
+					method: "POST",
+					body: formData,
+				},
+			);
+			if (!response.ok) {
+				throw new Error("Failed to submit workout");
+			}
+			return response.json();
+		},
+		onSuccess: (data) => {
+			console.log("Workout created successfully", data);
+			form.reset();
+		},
+		onError: (error) => {
+			console.error("Error creating workout", error);
+		},
+	});
 
 	return (
 		<div className="container mx-auto p-4" suppressHydrationWarning>

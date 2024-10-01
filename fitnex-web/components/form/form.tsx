@@ -140,7 +140,7 @@ export default function WorkoutForm() {
 	});
 
 	return (
-		<div className="container mx-auto p-4" suppressHydrationWarning>
+		<div className="container mx-auto p-4">
 			<div className="grid gap-6 md:grid-cols-[2fr_1fr]">
 				<Card>
 					<CardHeader>

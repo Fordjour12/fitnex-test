@@ -12,7 +12,8 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { X } from "lucide-react";
+import { ArrowLeft, X } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 const exercises = [
@@ -58,6 +59,14 @@ export function CreateWorkoutComponent() {
 	return (
 		<div className="container mx-auto px-4 py-8">
 			<h1 className="text-3xl font-bold mb-8 text-center">Create Side Quest</h1>
+			<Link
+				href="/exercise"
+				className="inline-flex items-center text-primary hover:underline mb-6"
+			>
+				<ArrowLeft className="mr-2 h-4 w-4" />
+				Back to All Exercises
+			</Link>
+
 			<div className="flex flex-col lg:flex-row gap-8">
 				{/* Left Section - Form */}
 				<div className="w-full lg:w-1/2">

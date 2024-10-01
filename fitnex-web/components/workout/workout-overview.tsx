@@ -107,22 +107,6 @@ export function WorkoutOverviewComponent() {
 								</CardContent>
 							</Card>
 						))}
-
-						{/* {sideQuest.workouts.map((workout) => (
-							<Card key={workout.id}>
-								<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-									<CardTitle className="text-sm font-medium">
-										{workout.name}
-									</CardTitle>
-									<Dumbbell className="h-4 w-4 text-muted-foreground" />
-								</CardHeader>
-								<CardContent>
-									<div className="text-2xl font-bold">
-										{workout.reps ? `${workout.reps} reps` : workout.duration}
-									</div>
-								</CardContent>
-							</Card>
-						))} */}
 					</div>
 				</div>
 

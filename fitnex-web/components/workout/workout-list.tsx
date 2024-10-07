@@ -8,7 +8,17 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@radix-ui/react-select";
+import { Dumbbell, Search } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
 export type WorkoutType = {
@@ -116,20 +126,18 @@ export function WorkoutListComponent() {
 				</p>
 			</header>
 
-			{/* <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
+			<div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
 				<div className="flex-1 w-full sm:w-auto">
 					<div className="relative">
 						<Search className="absolute left-2 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
 						<Input
 							type="text"
 							placeholder="Search for workout..."
-							value={searchTerm}
-							onChange={(e) => setSearchTerm(e.target.value)}
 							className="pl-8"
 						/>
 					</div>
 				</div>
-				<Select value={filterType} onValueChange={setFilterType}>
+				<Select>
 					<SelectTrigger className="w-full sm:w-[180px]">
 						<SelectValue placeholder="Filter by type" />
 					</SelectTrigger>
@@ -140,12 +148,12 @@ export function WorkoutListComponent() {
 						<SelectItem value="flexibility">Flexibility</SelectItem>
 					</SelectContent>
 				</Select>
-				<Link href="/sidequest/create-side-quest">
+				<Link href="/workout/create-workout">
 					<Button>
 						<Dumbbell className="mr-2 h-4 w-4" /> Create New Workout
 					</Button>
 				</Link>
-			</div> */}
+			</div>
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 				{workoutdata.map((workout) => (
@@ -177,45 +185,6 @@ export function WorkoutListComponent() {
 					</Link>
 				))}
 			</div>
-			{/*
-				{filteredQuests.map((quest) => (
-					<Link href={`/workout/${quest.id}`} key={quest.id}>
-						<Card className="h-full hover:shadow-lg transition-shadow duration-200">
-							<CardHeader>
-								<div className="w-16 h-16 mx-auto mb-2">
-									<img
-										src={quest.image}
-										alt={quest.name}
-										className="w-full h-full object-cover rounded-full"
-									/>
-								</div>
-								<CardTitle className="text-center">{quest.name}</CardTitle>
-							</CardHeader>
-							<CardContent>
-								<p className="text-center text-muted-foreground">
-									{quest.description}
-								</p>
-							</CardContent>
-							<CardFooter className="flex justify-between">
-								<span className="text-sm text-muted-foreground">
-									{quest.workouts} workouts
-								</span>
-								<span className="text-sm font-medium capitalize">
-									{quest.type}
-								</span>
-							</CardFooter>
-						</Card>
-					</Link>
-				))}
-			</div>
-
-			{filteredQuests.length === 0 && (
-				<div className="text-center mt-8">
-					<p className="text-muted-foreground">
-						No side quests found. Try adjusting your search or filter.
-					</p>
-				</div>
-			)}*/}
 		</div>
 	);
 }

@@ -67,6 +67,8 @@ const workoutdata = {
 	],
 };
 
+// export function WorkoutOverviewComponent({ workout }: { workout: WorkoutType }) {
+
 export function WorkoutOverviewComponent() {
 	return (
 		<div className="container mx-auto px-4 py-8">

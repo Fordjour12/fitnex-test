@@ -1,18 +1,58 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Dumbbell } from "lucide-react";
 import Link from "next/link";
-import { Badge } from "../ui/badge";
-import { useQuery } from "@tanstack/react-query";
-import { env } from "process";
-import { useState } from "react";
-import { WorkoutType } from "./workout-list";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
-// Mock data for the side quest
+export default function SingleWorkoutViewComponent({
+	...workout
+}: WorkoutFullType) {
+	return (
+		<div className="container mx-auto px-4 py-8">
+			<Link
+				href="/workout"
+				className="inline-flex items-center text-primary hover:underline mb-6"
+			>
+				<ArrowLeft className="mr-2 h-4 w-4" />
+				Back to Workouts
+			</Link>
+			<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div className="md:col-span-2">
+					<h1 className="text-3xl font-bold mb-4">{workout.name}</h1>
+					<p className="text-muted-foreground mb-6">{workout.description}</p>
+					<div className="flex flex-row gap-4 ">
+						<p className="text-sm">{workout.estimated_time} minutes</p>
+						<Badge>{workout.difficulty_level}</Badge>
+						<Badge variant={"outline"}>{workout.category}</Badge>
+					</div>
 
-const workoutdata = {
+					<div>
+						<h2 className="text-2xl font-semibold mb-4">Workouts</h2>
+						<span>{workout.workout_exercises?.length} workouts</span>
+
+						{workout.workout_exercises.map((wks) => (
+							<Card key={wks.order_index}>
+								<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+									<CardTitle className="text-sm font-medium">
+										{wks.exercise_id}
+									</CardTitle>
+									<Dumbbell className="h-4 w-4 text-muted-foreground" />
+								</CardHeader>
+								<CardContent>
+									<div className="text-2xl font-bold">
+										{wks.reps ? `${wks.reps} reps` : wks.duration}
+									</div>
+								</CardContent>
+							</Card>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+}
+
+{
+	/*
 	id: 1,
 	name: "Full Body Circuit",
 	category: "Strength",
@@ -71,24 +111,9 @@ const workoutdata = {
 	],
 };
 
-// export function WorkoutOverviewComponent({ workout }: { workout: WorkoutType }) {
-
-export function WorkoutOverviewComponent() {
-
-	const workoutId = params.id;
-
-
-	const [workout, setWorkout] = useState<WorkoutType>();
-	const base = env.NEXT_PUBLIC_BASE_URL;
-
-	const { data } = useQuery({
-		queryKey: ["workout", { workoutId }],
-		queryFn: async () => {
-			const response = await fetch(`${base}/workout/${workoutId}`);
-			return (await response.json()) as WorkoutType;
-		},
-	});
-
+export function WorkoutOverviewComponent({
+	...workout,
+}: { workout: WorkoutFullType }) {
 	return (
 		<div className="container mx-auto px-4 py-8">
 			<Link
@@ -152,4 +177,5 @@ export function WorkoutOverviewComponent() {
 			</div>
 		</div>
 	);
+} */
 }

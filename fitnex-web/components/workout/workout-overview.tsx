@@ -5,6 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Dumbbell } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
+import { useQuery } from "@tanstack/react-query";
+import { env } from "process";
+import { useState } from "react";
+import { WorkoutType } from "./workout-list";
 
 // Mock data for the side quest
 
@@ -70,6 +74,21 @@ const workoutdata = {
 // export function WorkoutOverviewComponent({ workout }: { workout: WorkoutType }) {
 
 export function WorkoutOverviewComponent() {
+
+	const workoutId = params.id;
+
+
+	const [workout, setWorkout] = useState<WorkoutType>();
+	const base = env.NEXT_PUBLIC_BASE_URL;
+
+	const { data } = useQuery({
+		queryKey: ["workout", { workoutId }],
+		queryFn: async () => {
+			const response = await fetch(`${base}/workout/${workoutId}`);
+			return (await response.json()) as WorkoutType;
+		},
+	});
+
 	return (
 		<div className="container mx-auto px-4 py-8">
 			<Link

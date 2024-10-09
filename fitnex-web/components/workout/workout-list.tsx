@@ -1,13 +1,5 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
-import {
-	Card,
-	CardContent,
-	CardFooter,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
 import {
 	Select,
 	SelectContent,
@@ -19,7 +11,18 @@ import { Dumbbell, Search } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
+
+import { env } from "@/env/client";
+import { useState } from "react";
+import {
+	Card,
+	CardContent,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from "../ui/card";
 
 export type WorkoutType = {
 	id: number;
@@ -29,85 +32,79 @@ export type WorkoutType = {
 	estimated_time: number;
 	cover_image: string;
 	difficulty_level: string;
-	workout_exercises: {
-		order_index: number;
-		type: string;
-		exercise_id?: number;
-		execise_id?: number;
-		reps?: number;
-		duration?: number;
-		set?: number;
-	}[];
 };
 
 // Mock data for workouts
-const workoutdata = [
-	{
-		id: 1,
-		name: "Full Body Circuit",
-		category: "Strength",
-		description:
-			"A workout with a mix of strength exercises and timed rest periods.",
-		estimated_time: 45,
-		cover_image: "circuit.png",
-		difficulty_level: "Intermediate",
-		workout_exercises: [
-			{
-				order_index: 1,
-				type: "exercise",
-				execise_id: 101,
-				reps: 15,
-				set: 2,
-			},
-			{
-				order_index: 2,
-				type: "exercise",
-				exercise_id: 102,
-				reps: 20,
-				set: 2,
-			},
-			{
-				order_index: 3,
-				type: "exercise",
-				exercise_id: 103,
-				duration: 30,
-				set: 2,
-			},
-			{ order_index: 4, type: "rest", duration: 60 },
-			{
-				order_index: 5,
-				type: "exercise",
-				exercise_id: 104,
-				reps: 15,
-				set: 2,
-			},
-			{
-				order_index: 6,
-				type: "exercise",
-				exercise_id: 105,
-				reps: 10,
-				set: 2,
-			},
-			{ order_index: 7, type: "rest", duration: 60, set: 2 },
-		],
-	},
-];
-
-/*
-const [workouts, setWorkouts] = useState<WorkoutType[]>();
-
-const base = env.NEXT_PUBLIC_BASE_URL;
-
-const { data } = useQuery({
-	queryKey: ["workouts", { workouts }],
-	queryFn: async () => {
-		const response = await fetch(`${base}/workout`);
-		return (await response.json()) as WorkoutType[];
-	},
-});
-*/
+// const workoutdata = [
+// 	{
+// 		id: 1,
+// 		name: "Full Body Circuit",
+// 		category: "Strength",
+// 		description:
+// 			"A workout with a mix of strength exercises and timed rest periods.",
+// 		estimated_time: 45,
+// 		cover_image: "circuit.png",
+// 		difficulty_level: "Intermediate",
+// 		workout_exercises: [
+// 			{
+// 				order_index: 1,
+// 				type: "exercise",
+// 				execise_id: 101,
+// 				reps: 15,
+// 				set: 2,
+// 			},
+// 			{
+// 				order_index: 2,
+// 				type: "exercise",
+// 				exercise_id: 102,
+// 				reps: 20,
+// 				set: 2,
+// 			},
+// 			{
+// 				order_index: 3,
+// 				type: "exercise",
+// 				exercise_id: 103,
+// 				duration: 30,
+// 				set: 2,
+// 			},
+// 			{ order_index: 4, type: "rest", duration: 60 },
+// 			{
+// 				order_index: 5,
+// 				type: "exercise",
+// 				exercise_id: 104,
+// 				reps: 15,
+// 				set: 2,
+// 			},
+// 			{
+// 				order_index: 6,
+// 				type: "exercise",
+// 				exercise_id: 105,
+// 				reps: 10,
+// 				set: 2,
+// 			},
+// 			{ order_index: 7, type: "rest", duration: 60, set: 2 },
+// 		],
+// 	},
+// ];
 
 export function WorkoutListComponent() {
+	const [workouts, setWorkouts] = useState<WorkoutType[]>();
+
+	const base = env.NEXT_PUBLIC_BASE_URL;
+
+	const {
+		data: workoutData,
+		isError,
+		isLoading,
+		isPending,
+	} = useQuery({
+		queryKey: ["workouts", { workouts }],
+		queryFn: async () => {
+			const response = await fetch(`${base}/api/v1/workouts`);
+			return (await response.json()) as WorkoutType[];
+		},
+	});
+
 	// const [searchTerm, setSearchTerm] = useState("");
 	// const [filterType, setFilterType] = useState("");
 
@@ -155,35 +152,41 @@ export function WorkoutListComponent() {
 				</Link>
 			</div>
 
-			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-				{workoutdata.map((workout) => (
-					<Link href={`/workout/${workout.id}`} key={workout.id}>
-						<Card className="h-full hover:shadow-lg transition-shadow duration-200">
-							<CardHeader>
-								<div className="w-16 h-16 mx-auto mb-2">
-									<img
-										src={workout.cover_image}
-										alt={workout.name}
-										className="w-full h-full object-cover rounded-full"
-									/>
-								</div>
-								<CardTitle className="text-center">{workout.name}</CardTitle>
-							</CardHeader>
-							<CardContent>
-								<p className="text-center text-muted-foreground">
-									{workout.description}
-								</p>
-							</CardContent>
-							<CardFooter className="flex justify-between">
-								<Badge>
-									<span className="text-sm font-medium capitalize">
-										{workout.category}
-									</span>
-								</Badge>
-							</CardFooter>
-						</Card>
-					</Link>
-				))}
+			<div>
+				{isError && <p>Error: error something happened</p>}
+				{isLoading && isPending && <p>Loading...</p>}
+				{!isLoading && !isPending && (
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+						{workoutData?.map((workout) => (
+							<Link href={`/workout/${workout.id}`} key={workout.id}>
+								<Card className="h-full hover:shadow-lg transition-shadow duration-200">
+									<CardHeader>
+										<div className="w-16 h-16 mx-auto mb-2">
+											<img
+												src={workout.cover_image}
+												alt={workout.name}
+												className="w-full h-full object-cover rounded-full"
+											/>
+										</div>
+										<CardTitle className="text-center">
+											{workout.name}
+										</CardTitle>
+									</CardHeader>
+									<CardContent>
+										<p className="text-center text-muted-foreground">
+											{workout.description}
+										</p>
+									</CardContent>
+									<CardFooter className="flex justify-between">
+										<span className="text-sm font-medium capitalize">
+											{workout.category}
+										</span>
+									</CardFooter>
+								</Card>
+							</Link>
+						))}
+					</div>
+				)}
 			</div>
 		</div>
 	);

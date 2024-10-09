@@ -507,7 +507,7 @@ export default function CreateWorkoutComponent() {
 								{watchedValues.estimated_time || "time"}
 							</Badge>
 						</div>
-						<CardDescription>
+						<CardDescription className="h-64 overflow-scroll py-2">
 							{watchedValues.description || "No description entered"}
 						</CardDescription>
 
